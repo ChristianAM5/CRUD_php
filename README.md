@@ -1,12 +1,14 @@
 # CRUD_php
 
-# Usuario base de datos
-CREATE USER 'CRUD_PHP'@'localhost' IDENTIFIED BY 'usuario';
-GRANT ALL PRIVILEGES ON * . * TO 'CRUD_PHP'@'localhost';
-FLUSH PRIVILEGES;
+# ENTORNO LOCAL CON PILA LAMP
+	
+	# LINUX UBUNTU22
+	# APACHE SERVIDOR WEB 
+	# MYSQL BASE DE DATOS
+	# PHP LENGUAJE DE PROGRAMACION
 
-# Base de datos
-CREATE DATABASE CRUD_PHP;
-USE DATABASE CRUD_PHP;
-CREATE TABLE USERS(DNI VARCHAR(20), NOMBRE VARCHAR(20));
-CREATE TABLE PRODUCTS(ID INT, NOMBRE VARCHAR(20));
+# Carga el archivo SQL en MySQL utilizando el cliente de línea de comandos:
+
+# mysql -u root -p < database.sql
+
+

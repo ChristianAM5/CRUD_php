@@ -14,4 +14,4 @@
 
 # Creamos pagina de registro.html guardandolos en la base de datos con verificación de entrada
 
-
+# Tenemos planteada también el login pero quiero primero redireccionar los errores a la pagina de registro y el registro exitoso a login

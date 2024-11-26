@@ -12,8 +12,12 @@
 	# mysql -u root -p < database.sql
 	# FINAL FASE 1
 
-# Creamos pagina de registro.html guardandolos en la base de datos con verificación de entrada
+# Creamos pagina de Registro.html guardandolos en la base de datos con verificación de entrada
 	# FINAL FASE 2
 
-# Creamos pagina de login.html y php con comprobación de contraseña y errores.
+# Creamos pagina de Login.html y php con comprobación de contraseña y errores.
 	# FINAL FASE 3
+
+# Creamos pagina de bienvenidad Index.php con comprobación de usuarios logueados y redireccion en caso de que no lo esten
+	# Añadimos opción de cerrar sesion mediante el archivo Logout.php
+	# FINAL FASE 4

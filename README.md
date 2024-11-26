@@ -21,3 +21,6 @@
 # Creamos pagina de bienvenidad Index.php con comprobación de usuarios logueados y redireccion en caso de que no lo esten
 	# Añadimos opción de cerrar sesion mediante el archivo Logout.php
 	# FINAL FASE 4
+
+# Creamos una pagina CRUD.view.php con el listado de productos de la base de datos y enlaces a los distintas paginas del crud (aún no funcionales)
+	# FINAL FASE 5

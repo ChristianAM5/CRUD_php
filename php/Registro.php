@@ -22,12 +22,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Validar que los campos no estén vacíos
     if ($username == '' || $email == '' || $password == '' || $confirm_password == '') {
-        die('Todos los campos son obligatorios.');
+        header("Location: ../Registro.html?error=Todos los campos son obligatorios.");
+        exit;
     }
 
     // Validar que las contraseñas coincidan
     if ($password != $confirm_password) {
-        die('Las contraseñas no coinciden.');
+        header("Location: ../Registro.html?error=Las contraseñas no coinciden.");
+        exit;
     }
 
     // Verificar si el usuario o el correo ya están registrados
@@ -35,7 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result = mysqli_query($connection, $query);
 
     if (mysqli_num_rows($result) > 0) {
-        die('El nombre de usuario o correo ya están registrados.');
+        header("Location: ../Registro.html?error=El nombre de usuario o correo ya están registrados.");
+        exit;
     }
 
     // Encriptar la contraseña
@@ -46,12 +49,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               VALUES ('$username', '$email', '$password_hash')";
 
     if (mysqli_query($connection, $query)) {
-        echo 'Registro exitoso.';
+        header("Location: ../Login.html");
+        exit;
     } else {
-        echo 'Error al registrar el usuario: ' . mysqli_error($connection);
+        header("Location: ../Registro.html?error=Error al registrar el usuario: " . mysqli_error($connection));
+        exit;
     }
 } else {
-    die('Método no permitido.');
+    header("Location: ../Registro.html?error=Método no permitido.");
+    exit;
 }
 
 // Cerrar la conexión

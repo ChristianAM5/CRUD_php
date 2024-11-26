@@ -23,7 +23,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Validar que los campos no estén vacíos
     if ($email == '' || $password == '') {
-        die('Por favor, completa todos los campos.');
+        $_SESSION['error'] = "Por favor, completa todos los campos.";
+        header("Location: ../Login.html");
+        exit;
     }
 
     // Consultar el usuario en la base de datos
@@ -32,22 +34,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (mysqli_num_rows($result) > 0) {
         $user = mysqli_fetch_assoc($result);
-        
+
         // Verificar la contraseña
         if (password_verify($password, $user['password_hash'])) {
             // Configurar la sesión
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
-            
-            echo "Inicio de sesión exitoso. Bienvenido, " . $user['username'] . "!";
+
+            // Redirigir al índice
+            header("Location: ../Index.php");
+            exit;
         } else {
-            echo "Contraseña incorrecta.";
+            $_SESSION['error'] = "Contraseña incorrecta.";
+            header("Location: ../Login.html");
+            exit;
         }
     } else {
-        echo "El correo electrónico no está registrado.";
+        $_SESSION['error'] = "El correo electrónico no está registrado.";
+        header("Location: ../Registro.html");
+        exit;
     }
 } else {
-    die('Método no permitido.');
+    $_SESSION['error'] = "Método no permitido.";
+    header("Location: ../Registro.html");
+    exit;
 }
 
 // Cerrar la conexión

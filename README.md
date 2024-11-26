@@ -13,5 +13,7 @@
 	# FINAL FASE 1
 
 # Creamos pagina de registro.html guardandolos en la base de datos con verificación de entrada
+	# FINAL FASE 2
 
-# Tenemos planteada también el login pero quiero primero redireccionar los errores a la pagina de registro y el registro exitoso a login
+# Creamos pagina de login.html y php con comprobación de contraseña y errores.
+	# FINAL FASE 3

@@ -18,7 +18,6 @@ if (!isset($_SESSION['user_id'])) {
     <h1>Listado de Productos</h1>
     <p>Hola, <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong></p>
     <p><a href="CRUD.create.php">Crear productos</a></p>
-    <p><a href="CRUD.delete.php">Eliminar productos</a></p>
 
     <p><a href="Index.php">Volver al inicio</a></p>
 
@@ -32,6 +31,8 @@ if (!isset($_SESSION['user_id'])) {
 		<th>cantidad</th>
 		<th>fecha de creación</th>
 		<th>fecha de actualización</th>
+		<th>Accion actualizar</th>
+		<th>Accion eliminar</th>
         </tr>
     </thead>
     <tbody>

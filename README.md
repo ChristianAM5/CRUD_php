@@ -30,3 +30,6 @@
 
 # Actualizamos el listado de productos para añadir una opcion que nos permite editar un producto de forma que nos envia a un formulario (CRUD.update.php) que además valida la entrada antes de realizar los cambios en la base de datos
 	# FINAL FASE 7
+
+# Adaptamos el listado de productos para que cada uno tenga una opcion de borrado y se mandará a una pagina de comprobación para confirmar la eliminacion en la base de datos
+	# FINAL FASE 8 y tarea

@@ -22,6 +22,7 @@ if ($result = $connection->query($query)) {
 		<td>{$row['created_at']}</td>  
 		<td>{$row['updated_at']}</td>  
 		<td><a href='CRUD.update.php?id={$row['id']}'>Editar</a></td>
+		<td><a href='CRUD.delete.php?id={$row['id']}'>Eliminar</a></td>
 	      </tr>";
 	    }
 	} else {

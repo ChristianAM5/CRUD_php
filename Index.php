@@ -18,7 +18,7 @@ if (!isset($_SESSION['user_id'])) {
     <h1>Bienvenido al Sistema de Gestión</h1>
     <p>Hola, <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong>. ¿Qué deseas hacer hoy?</p>
     <ul>
-        <li><a href="CRUD.view.php">Gestionar Productos</a></li>
+        <li><a href="CRUD.read.php">Gestionar Productos</a></li>
         <li><a href="php/Logout.php">Cerrar sesión</a></li>
     </ul>
 </body>

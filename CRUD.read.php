@@ -1,0 +1,42 @@
+<?php
+session_start();
+
+// Verificar si el usuario está autenticado
+if (!isset($_SESSION['user_id'])) {
+    header("Location: Login.html");
+    exit;
+}
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Productos</title>
+</head>
+<body style="background-color:powderblue;">
+    <h1>Listado de Productos</h1>
+    <p>Hola, <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong></p>
+    <p><a href="CRUD.create.php">Crear productos</a></p>
+    <p><a href="CRUD.delete.php">Eliminar productos</a></p>
+    <p><a href="CRUD.update.php">Actualizar productos</a></p>
+
+    <p><a href="Index.php">Volver al inicio</a></p>
+
+<table border="1px solid black">
+    <thead>
+	<tr>
+		<th>id</th>
+		<th>nombre</th>
+		<th>descripción</th>
+		<th>precio</th>
+		<th>cantidad</th>
+		<th>fecha de creación</th>
+		<th>fecha de actualización</th>
+        </tr>
+    </thead>
+    <tbody>
+	<?php include 'php/CRUD.read.php'; ?>
+    </tbody>
+</body>
+</html>

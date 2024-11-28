@@ -24,3 +24,8 @@
 
 # Creamos una pagina CRUD.view.php con el listado de productos de la base de datos y enlaces a los distintas paginas del crud (aún no funcionales)
 	# FINAL FASE 5
+
+# Actualizamos la logica del CRUD.read.php(antes CRUD.view.php) para separar php y html, y creamos el CRUD.create.php para permitir a los usuarios crear productos y almacenarlos en la base de datos con su validación y mensajes de error
+	# FINAL FASE 6
+
+

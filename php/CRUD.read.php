@@ -21,6 +21,7 @@ if ($result = $connection->query($query)) {
 		<td>{$row['stock']}</td>  
 		<td>{$row['created_at']}</td>  
 		<td>{$row['updated_at']}</td>  
+		<td><a href='CRUD.update.php?id={$row['id']}'>Editar</a></td>
 	      </tr>";
 	    }
 	} else {

@@ -19,7 +19,6 @@ if (!isset($_SESSION['user_id'])) {
     <p>Hola, <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong></p>
     <p><a href="CRUD.create.php">Crear productos</a></p>
     <p><a href="CRUD.delete.php">Eliminar productos</a></p>
-    <p><a href="CRUD.update.php">Actualizar productos</a></p>
 
     <p><a href="Index.php">Volver al inicio</a></p>
 

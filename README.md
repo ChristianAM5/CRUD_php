@@ -28,4 +28,5 @@
 # Actualizamos la logica del CRUD.read.php(antes CRUD.view.php) para separar php y html, y creamos el CRUD.create.php para permitir a los usuarios crear productos y almacenarlos en la base de datos con su validación y mensajes de error
 	# FINAL FASE 6
 
-
+# Actualizamos el listado de productos para añadir una opcion que nos permite editar un producto de forma que nos envia a un formulario (CRUD.update.php) que además valida la entrada antes de realizar los cambios en la base de datos
+	# FINAL FASE 7

@@ -33,3 +33,5 @@
 
 # Adaptamos el listado de productos para que cada uno tenga una opcion de borrado y se mandará a una pagina de comprobación para confirmar la eliminacion en la base de datos
 	# FINAL FASE 8 y tarea
+
+# INTENTO DE DOCKERIZAR TODAVIA NO FUNCIONA

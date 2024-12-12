@@ -34,4 +34,8 @@
 # Adaptamos el listado de productos para que cada uno tenga una opcion de borrado y se mandará a una pagina de comprobación para confirmar la eliminacion en la base de datos
 	# FINAL FASE 8 y tarea
 
-# INTENTO DE DOCKERIZAR TODAVIA NO FUNCIONA
+# COMO DOCKERIZAR
+	# Clonar el repositorio "git clone <URL-del-repositorio>"
+	# Construir la imagen con el Dockerfile "docker build -t <nombre_imagen> ."
+	# Poner en funcionamiento el contenedor "docker run -d -p <puerto_de_tu_maquina>:80 --name <nombre_contenedor> <nombre_imagen>
+	# Entrar desde el navegador para ver que funciona correctamente "localhost:<puerto_de_tu_maquina>"

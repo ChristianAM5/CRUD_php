@@ -19,13 +19,18 @@ RUN a2enmod rewrite
 COPY . /var/www/html/
 
 # Copia el archivo SQL al contenedor
-COPY database.sql /docker-entrypoint-initdb.d/
+COPY database.sql /docker-entrypoint-initdb.d/database.sql
 
 # Configura permisos
 RUN chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html
+
+# Configura la página de inicio de Apache para que sea Registro.html
+RUN echo '<Directory "/var/www/html">' >> /etc/apache2/apache2.conf && \
+    echo '    DirectoryIndex Registro.html' >> /etc/apache2/apache2.conf && \
+    echo '</Directory>' >> /etc/apache2/apache2.conf
 
 # Expone el puerto 80 para Apache y 3306 para MySQL
 EXPOSE 80 3306
 
 # Inicia Apache y MySQL
-CMD service mysql start && apache2ctl -D FOREGROUND
+CMD ["bash", "-c", "service mysql start && apache2ctl -D FOREGROUND"]

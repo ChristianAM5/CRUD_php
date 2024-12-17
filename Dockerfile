@@ -16,10 +16,19 @@ RUN apt-get update && apt-get install -y \
 RUN a2enmod rewrite
 
 # Copia los archivos del proyecto al servidor web
-COPY . /var/www/html/
+COPY web/ /var/www/html/
+
+COPY databases/* /var/lib/mysql/
+
+# Copiar el script de inicialización al contenedor
+COPY init.sh /usr/local/bin/init.sh
+
+# Hacer que el script sea ejecutable
+RUN chmod +x /usr/local/bin/init.sh
 
 # Copia el archivo SQL al contenedor
-COPY database.sql /docker-entrypoint-initdb.d/database.sql
+RUN service mysql start && \
+    mysql -u root -proot < /var/lib/mysql/database.sql
 
 # Configura permisos
 RUN chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html

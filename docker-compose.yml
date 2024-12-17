@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: apache_php_mysql
+    ports:
+      - "80:9000"        # Mapea el puerto 80 del contenedor al puerto 80 del host
+    volumes:
+      - ./web:/var/www/html    # Volumen para los archivos HTML
+      - ./databases:/var/lib/mysql # Volumen para los archivos de la base de datos
+    environment:
+      MYSQL_ROOT_PASSWORD: root  # Contraseña de root para MySQL (puedes cambiarla si es necesario)
+    networks:
+      - my_network
+    entrypoint: /bin/bash -c "/usr/local/bin/init.sh && service mysql start && apache2ctl -D FOREGROUND"
+
+networks:
+  my_network:
+    driver: bridge

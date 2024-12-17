@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 // Conexión a la base de datos
-$host = "localhost";
+$host = "127.0.0.1";
 $dbname = "CRUD_PHP";
 $user = "CRUD_PHP";
 $password = "usuario123";

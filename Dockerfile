@@ -15,20 +15,16 @@ RUN apt-get update && apt-get install -y \
 # Habilita el módulo de reescritura de Apache
 RUN a2enmod rewrite
 
-# Copia los archivos del proyecto al servidor web
+# Copia los archivos del proyecto al servidor web y la creacion de la base de datos
 COPY web/ /var/www/html/
 
-COPY databases/* /var/lib/mysql/
+COPY database.sql /docker-entrypoint-initdb.d/database.sql
 
 # Copiar el script de inicialización al contenedor
 COPY init.sh /usr/local/bin/init.sh
 
 # Hacer que el script sea ejecutable
 RUN chmod +x /usr/local/bin/init.sh
-
-# Copia el archivo SQL al contenedor
-RUN service mysql start && \
-    mysql -u root -proot < /var/lib/mysql/database.sql
 
 # Configura permisos
 RUN chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html
@@ -41,5 +37,5 @@ RUN echo '<Directory "/var/www/html">' >> /etc/apache2/apache2.conf && \
 # Expone el puerto 80 para Apache y 3306 para MySQL
 EXPOSE 80 3306
 
-# Inicia Apache y MySQL
-CMD ["bash", "-c", "service mysql start && apache2ctl -D FOREGROUND"]
+# Inicia con el archivo configuracion del contenedor
+CMD ["/usr/local/bin/init.sh"]

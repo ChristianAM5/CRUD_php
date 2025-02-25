@@ -20,7 +20,17 @@ if (!isset($_SESSION['user_id'])) {
     <p><a href="CRUD.create.php">Crear productos</a></p>
 
     <p><a href="Index.php">Volver al inicio</a></p>
-
+<form action="CRUD.read.php" method="POST">
+        <label for="search">Buscar producto:</label>
+        <input type="text" name="search" id="search" placeholder="Introduce el nombre del producto">
+        <button type="submit">Buscar</button>
+    </form>
+<?php
+	if (isset($_POST['search']) && !empty($_POST['search'])) {
+    	$search = $_POST['search'];
+    	echo "<p>Resultados para: <strong>$search</strong></p>";
+	}
+?>
 <table border="1px solid black">
     <thead>
 	<tr>

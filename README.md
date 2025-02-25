@@ -38,3 +38,9 @@
 	# Clonar el repositorio "git clone <URL-del-repositorio>"
 	# Levantamos todo el contenedor con el docker-compose up --build
 	# Podemos entrar a la web mediante localhost:<puerto_host> 
+
+# HEMOS CONFIGURADO EL CRUD_BASICO SEGUN LA TAREA XSS
+	# Mediante el metodo GET se envian los datos en la url permitiendo al atacante enviar un enlca malicioso, mientras que en POST se envian en la solicitud http lo cual lo hace mas complejo para el atacante dado que ha de engañar a la victima para que envie un formulario
+	# Ahora en el archivo que lista los productos contamos con un formulario de busqueda de productos que teniendo en cuenta como esta configurado permite ejecucion de codigo por parte del cliente por ejemplo con javascript <script>alert('¡Vulnerabilidad XSS!');</script>
+	# Mediante <script>alert(document.cookie);</script> se obtiene la cookie de sesión
+

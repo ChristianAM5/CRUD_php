@@ -45,3 +45,4 @@
 	# Mediante <script>alert(document.cookie);</script> se obtiene la cookie de sesión
 	# Para comprobar el acceso con esas cookies me he basado en este tutorial https://medium.com/@TheCS_student/stealing-cookies-with-javascript-cf668999e60b, utilizando ese codigo javascript enviamos las cookies a un servidor de la pagina webhook y una vez las tenemos podemos inyectarlas en nuestra pagina web para acceder como ese usuario
 
+# AÑADIMOS LoginMalicioso.php como intento de ataque XSS por POST

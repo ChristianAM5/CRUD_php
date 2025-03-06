@@ -1,4 +1,14 @@
-<!DOCTYPE html>
+<?php
+session_start(); // Inicia la sesión
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: Login.html");
+    exit;
+} else {
+    header("Location: Index.php");
+    exit;
+}
+?>
 <html lang="es">
 <head>
     <meta charset="UTF-8">

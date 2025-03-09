@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               VALUES ('$username', '$email', '$password_hash')";
 
     if (mysqli_query($connection, $query)) {
-        header("Location: ../Login.html");
+        header("Location: ../Login.php");
         exit;
     } else {
         header("Location: ../Registro.html?error=Error al registrar el usuario: " . mysqli_error($connection));

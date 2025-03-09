@@ -20,7 +20,7 @@ if (!isset($_SESSION['user_id'])) {
     <p><a href="CRUD.create.php">Crear productos</a></p>
 
     <p><a href="Index.php">Volver al inicio</a></p>
-<form action="CRUD.read.php" method="POST">
+    <form action="CRUD.read.php" method="GET">
         <label for="search">Buscar producto:</label>
         <input type="text" name="search" id="search" placeholder="Introduce el nombre del producto">
         <button type="submit">Buscar</button>

@@ -7,7 +7,7 @@ if (isset($_SESSION['user_id'])) {
 }
 
 if (!isset($_SESSION['csrf_token'])) {
-    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+    $_SESSION['csrf_token'] = base64_encode(random_bytes(32));
 }
 
 ?>

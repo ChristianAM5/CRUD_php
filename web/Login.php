@@ -1,13 +1,15 @@
 <?php
 session_start(); // Inicia la sesión
 
-if (!isset($_SESSION['user_id'])) {
-    header("Location: Login.html");
-    exit;
-} else {
+if (isset($_SESSION['user_id'])) {
     header("Location: Index.php");
     exit;
 }
+
+if (!isset($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+
 ?>
 <html lang="es">
 <head>
@@ -18,6 +20,7 @@ if (!isset($_SESSION['user_id'])) {
 <body style="background-color:powderblue;">
     <h1>Iniciar Sesión</h1>
     <form action="/php/Login.php" method="POST">
+	<input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
         <label for="email">Correo Electrónico:</label><br>
         <input type="email" id="email" name="email" required><br><br>
         

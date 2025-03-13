@@ -6,6 +6,14 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: Login.html");
     exit;
 }
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+        die("Error: CSRF token inválido.");
+    }
+
+    echo "Formulario enviado correctamente.";
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">

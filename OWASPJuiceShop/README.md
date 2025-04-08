@@ -7,7 +7,7 @@ como este http://172.22.255.45:3000/ftp/acquisitions.md
 3.El archivo main.js muestra varias rutas de la web
 entre ellas podemos entrar a http://172.22.255.45:3000/#/administration donde se ve la informacion de los distintos usuarios de la web
 
-4.La barra de búsqueda de productos permite ejecución de javascript mediante etiquetas imagen con onerror dado que el propio javascript esta sanitizado <img src=x onerror=alert('XSS')>, para robar la cookie podemos usar el siguiente comando <img src=x onerror=javascript:alert(document.cookie)> (DOM XSS)
+4.La barra de búsqueda de productos permite ejecución de javascript mediante etiquetas imagen con onerror dado que el propio javascript esta sanitizado img src=x onerror=alert('XSS'), para robar la cookie podemos usar el siguiente comando img src=x onerror=javascript:alert(document.cookie) (DOM XSS)
 
 5.Como nos comentaron al principio del reto existe una scoreboard que nos va contando los logros que hemos hecho en la siguiente url http://172.22.255.45:3000/#/score-board
 

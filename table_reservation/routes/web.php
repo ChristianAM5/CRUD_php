@@ -1,10 +1,15 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReservationController;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use App\Models\Zone;
 use App\Models\Table;
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::resource('reservations', ReservationController::class);
+});
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,7 +33,7 @@ Route::get('/test3', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+   return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
